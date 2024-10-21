@@ -1,0 +1,37 @@
+{
+  "name": "playwright-e2e-testing",
+  "version": "1.0.0",
+  "description": "Learn Playwright test Automation",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [
+    "Playwright",
+    "moch",
+    "chai",
+    "mountebank",
+    "mock",
+    "API",
+    "UI"
+  ],
+  "author": "Raj Kumar K",
+  "license": "ISC",
+  "devDependencies": {
+    "@faker-js/faker": "^9.0.3",
+    "@playwright/test": "^1.48.1",
+    "@types/node": "^22.7.7",
+    "dotenv": "^16.4.5",
+    "husky": "^9.1.6",
+    "ts-node": "^10.9.2"
+  },
+  "dependencies": {
+    "@types/uuid": "^10.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.10.0",
+    "@typescript-eslint/parser": "^8.10.0",
+    "eslint": "^9.13.0",
+    "eslint-plugin-playwright": "^1.8.0",
+    "mountebank": "^2.9.1",
+    "ortoni-report": "^2.0.4",
+    "playwright-e2e-testing": "file:",
+    "uuid": "^10.0.0"
+  }
+}

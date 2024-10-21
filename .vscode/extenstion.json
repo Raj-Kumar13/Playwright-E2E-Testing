@@ -1,0 +1,7 @@
+{
+    "recommedations":[
+        "ms-playwright.playwright",
+        "dotenv.dotenv-vscode",
+        "gruntfuggly.todo-tree"
+    ]
+}
