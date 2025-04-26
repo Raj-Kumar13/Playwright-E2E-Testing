@@ -26,25 +26,27 @@ export default defineConfig({
   projects: [
     {
       name: 'web',
-      testDir:'./source/tests',
-      use: { ...devices['Desktop Chrome'], 
-        screenshot:'only-on-failure',
-        actionTimeout:10_000,
-        launchOptions:{
-          args:['--window-size=1920,1040']
+      testDir: './source/tests',
+      use: {
+        ...devices['Desktop Chrome'],
+        screenshot: 'only-on-failure',
+        actionTimeout: 10_000,
+        launchOptions: {
+          args: ['--window-size=1920,1040'],
+
         }
       },
     },
 
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
+    // {
+    //   name: 'firefox',
+    //   use: { ...devices['Desktop Firefox'] },
+    // },
 
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
+    // {
+    //   name: 'webkit',
+    //   use: { ...devices['Desktop Safari'] },
+    // },
 
     /* Test against mobile viewports. */
     // {

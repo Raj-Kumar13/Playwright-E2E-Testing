@@ -1,0 +1,15 @@
+{
+    "predicates": [
+        {
+            "equals": {
+                "method": "POST",
+                "path": "/update"
+            }
+        }
+    ],
+    "responses": [
+        {
+            "inject": "<%- stringify(filename, 'scripts/update.js')%>"
+        }
+    ]
+}

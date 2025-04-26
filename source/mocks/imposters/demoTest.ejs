@@ -1,0 +1,17 @@
+{
+    "port": 5000,
+    "protocol": "http",
+    "name": "Demo Test Stubs",
+    "recordRequests": true,
+    "defaultResponse": {
+        "statusCode": 404,
+        "body": {
+            "error": "No Matching Stub Found"
+        }
+    },
+    "stubs": [
+        <% include create.ejs%>,
+        <% include update.ejs%>,
+        <% include delete.ejs%>
+    ]
+}
