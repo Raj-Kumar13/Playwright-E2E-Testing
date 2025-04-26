@@ -1,8 +1,8 @@
 import { resolve } from "path";
 
 class HelperUtils {
-
-    findMatchRequest = (mountebankRequests: IMBRequest[], searchItemKey: string, searchItemValue: string | number) => {
+    //mountebankRequests: IMBRequest[], searchItemKey: string, searchItemValue: string | number
+    findMatchRequest = (mountebankRequests: any, searchItemKey: string, searchItemValue: string | number) => {
         let value = null;
         for (const request of mountebankRequests) {
             const requestOfInterest = this.isRequestMatchFound(JSON.parse(request.body), searchItemKey, searchItemValue);
@@ -40,7 +40,7 @@ class HelperUtils {
         return false;
     }
 
-    findMatchResponseBySpanId(stubResponse: any, spanId: string) {
+    findMatchResponseBySpanId(stubResponse: any, spanId: string): any {
         if (typeof stubResponse === 'object' && stubResponse !== null) {
             if (Object.prototype.hasOwnProperty.call(stubResponse, 'request')
                 && Object.prototype.hasOwnProperty.call(stubResponse.request, 'headers')

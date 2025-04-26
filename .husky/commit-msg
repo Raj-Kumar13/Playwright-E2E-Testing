@@ -1,22 +1,29 @@
 #!/bin/bash
 
-#Function to validate Jira Pattern and message
-validateCommitMessage(){
+# Function to validate Jira pattern and message
+validate_commit_message() {
     commit_message=$1
+    # Jira pattern regex
     jira_regex='FEATURE-[0-9]+'
-    if[[$commit_message =~ ^[[:space:]]*$jira_regex[[:space:]]*:[[:space:]]* ]];then
-        message=$(echo "$commit_massage" | sed -E "s/^[[:space:]]*$jira_regex[[:space:]]*:[[:space:]]*//")
+    # Check if the commit message starts with a valid Jira pattern
+    if [[ $commit_message =~ ^[[:space:]]*$jira_regex[[:space:]]*:[[:space:]]* ]]; then
+        # Check if the commit message contains a message after the Jira pattern
+        message=$(echo "$commit_message" | sed -E "s/^[[:space:]]*$jira_regex[[:space:]]*:[[:space:]]*//")
+        # Remove leading and trailing whitespace from the message
         message=$(echo "$message" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')
-        if[[ -z "${message// }"]];then
-            echo "Error: Commit message must contains a message after the Jira Pattern (e.g., FEATURE-112: your Message)"
-            exit 1
+        if [[ -z "${message// }" ]]; then
+            echo "Error: Commit message must contain a message after the Jira pattern (e.g., FEATURE-1234: Your message)"
+            exit 1 # Commit message does not contain a message
         fi
-        return 0
+        return 0 # Both Jira pattern and message are valid
     else
-        echo "Error: Commit message must start with a valid Jira pattern followed by a colon (e.g., FEATURE-112: your Message)"  
-        exit 1
-    fi         
+        echo "Error: Commit message must start with a valid Jira pattern followed by a colon (e.g., CFDDG-1234: Your message)"
+        exit 1 # Jira pattern not matched
+    fi
 }
 
+# Read commit message from the file
 commit_message=$(cat "$1")
-validateCommitMessage "$commit_message"
+
+# Validate commit message
+validate_commit_message "$commit_message"
