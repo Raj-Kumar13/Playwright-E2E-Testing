@@ -1,0 +1,41 @@
+{
+    "name": "collate-graphql-testing",
+    "version": "1.0.0",
+    "description": "test collate graphql service",
+    "main": "index.js",
+    "scripts": {
+        "test": "mocha --config .mocharc.js",
+        "lint": "eslint tests/**/*.ts",
+        "lint:fix": "eslint tests/**/*.ts --fix",
+        "prepare": "husky"
+    },
+    "keywords": [],
+    "author": "test",
+    "license": "ISC",
+    "devDependencies": {
+        "@faker-js/faker": "^8.4.1",
+        "@reportportal/agent-js-mocha": "^5.0.4",
+        "@types/chai": "^4.3.12",
+        "@types/mocha": "^10.0.6",
+        "@types/mochawesome": "^6.2.4",
+        "@types/supertest": "^6.0.2",
+        "@types/uuid": "^10.0.0",
+        "@typescript-eslint/eslint-plugin": "^7.1.0",
+        "@typescript-eslint/parser": "^7.1.0",
+        "chai": "^4.4.1",
+        "dotenv": "^16.4.5",
+        "eslint": "^8.57.0",
+        "graphql-tag": "^2.12.6",
+        "husky": "^9.0.11",
+        "mocha": "^10.3.0",
+        "mochawesome": "^7.1.3",
+        "supertest": "^6.3.4",
+        "ts-node": "^10.9.2",
+        "tsconfig-paths": "^4.2.0",
+        "typescript": "^5.3.3",
+        "uuid": "^10.0.0"
+    },
+    "dependencies": {
+        "collate-graphql-testing": "file:"
+    }
+}

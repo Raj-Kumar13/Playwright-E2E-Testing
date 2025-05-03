@@ -1,0 +1,52 @@
+{
+    "name": "lsaas-ocv-test-automation",
+    "version": "1.0.0",
+    "description": "ocv test framework",
+    "repository": {
+        "homepage": "https://github.service.anz/BL/lsaas-ocv-testing",
+        "readme": "https://github.service.anz/BL/lsaas-ocv-testing#readme",
+        "pullRequest": "https://github.service.anz/BL/lsaas-ocv-testing/pulls"
+    },
+    "main": "index.js",
+    "scripts": {
+        "anzxTestDev": "export ENV=dev && export TEST_TYPE=ANZx && mocha --grep '@ANZx'",
+        "arcTestDev": "export ENV=dev && export TEST_TYPE=ARC && mocha --grep '@ARC'",
+        "splunkANZx": "export ENV=dev && export TEST_TYPE=ANZx && mocha --grep '@splunkANZx'",
+        "splunkARC": "export ENV=dev && export TEST_TYPE=ARC && mocha --grep '@splunkARC'",
+        "mock": "mb --configfile stubs/imposters/ocv.ejs --allowInjection --loglevel info --debug",
+        "anzxTestLocal": "export ENV=local&& export TEST_TYPE=ANZx&&mocha --grep '@ANZx'",
+        "arcTestLocal": "export ENV=local&& export TEST_TYPE=ARC&&mocha --grep '@ARC'",
+        "postinstall": "husky",
+        "lint": "eslint .",
+        "lint-fix": "eslint . --fix"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@types/chai": "^4.2.18",
+        "@types/mocha": "^10.0.6",
+        "@types/mochawesome": "^6.2.4",
+        "@types/uuid": "^9.0.7",
+        "chai": "^4.3.4",
+        "mocha": "^10.2.0",
+        "mochawesome": "^7.1.3",
+        "mochawesome-report-generator": "^6.2.0",
+        "mountebank": "^2.9.1",
+        "path": "^0.12.7",
+        "ts-node": "^10.9.2",
+        "tsconfig-paths": "^4.2.0",
+        "tslint-config-prettier": "^1.18.0",
+        "typescript": "^5.3.3",
+        "uuid": "^9.0.1"
+    },
+    "devDependencies": {
+        "@reportportal/agent-js-mocha": "^5.0.4",
+        "@types/supertest": "^6.0.2",
+        "@typescript-eslint/eslint-plugin": "^7.4.0",
+        "@typescript-eslint/parser": "^7.4.0",
+        "dotenv": "^16.4.5",
+        "eslint": "^8.57.0",
+        "husky": "^9.0.11",
+        "supertest": "^6.3.4"
+    }
+}

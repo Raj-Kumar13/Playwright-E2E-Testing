@@ -1,0 +1,23 @@
+{
+    "edtitor.defaultFormatter": "esbenp.prettier-vscode",
+    "[javascript]": {
+        "editor.maxTokenizationLineLength": 2500,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.codeActionsOnSave": {
+        "source.fixAll.tslint": "explicit",
+        "source.organizeImports": "explicit"
+    },
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "editor.formatOnSave": true,
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "/package.json"
+            ],
+            "url": "https://json.schemastore.org/package",
+            "schema": true
+        }
+    ],
+    "editor.formatOnPaste": true
+}

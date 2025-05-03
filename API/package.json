@@ -1,0 +1,63 @@
+{
+  "name": "api-automation-supertest",
+  "version": "1.0.0",
+  "description": "API Test Automation Framework using supertest",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha src/test/composite/*/**.ts",
+    "composite_st": "export ENV=ST2&&mocha src/test/composite/*/**.ts",
+    "composite_st4": "export ENV=ST4&&mocha src/test/composite/*/**.ts",
+    "composite_st4Windows": "cross-env ENV=ST4&&mocha src/test/composite/*/**.ts",
+    "smoke": "export ENV=ST2&&mocha --grep '@smoke' src/test/composite/*/**.ts",
+    "===JIRA--Scripts===": "=========================================",
+    "updateXrayResult": "mocha src/xray/tests/updateJIRAExecutionResult.ts",
+    "createJiraTests": "mocha src/xray/tests/createJiraTests.ts",
+    "xrayDataMining": "mocha src/xray/tests/getTestExecution.ts",
+    "lint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx .",
+    "postinstall": "husky"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.service.anz/BL/LSM_APISuperTestFramework.git"
+  },
+  "keywords": [
+    "supertest",
+    "mocha",
+    "webservices"
+  ],
+  "author": "ANZ",
+  "license": "ISC",
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "api-automation-supertest": "file:",
+    "dotenv": "^10.0.0"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^7.0.1",
+    "@reportportal/agent-js-mocha": "^5.0.4",
+    "@types/chai": "^4.2.18",
+    "@types/mocha": "^8.2.2",
+    "@types/node": "^15.12.2",
+    "@types/oracledb": "^5.2.3",
+    "@types/supertest": "^2.0.11",
+    "@types/uuid": "^8.3.4",
+    "base64url": "^3.0.1",
+    "chai": "^4.3.4",
+    "eslint": "^8.57.0",
+    "eslint-config-standard-with-typescript": "^39.0.0",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-n": "^16.0.2",
+    "eslint-plugin-promise": "^6.1.1",
+    "husky": "^9.0.11",
+    "mocha": "^9.0.0",
+    "mochawesome": "^6.2.2",
+    "node-oracledb": "^1.0.2",
+    "oracledb": "^5.5.0",
+    "supertest": "^6.1.3",
+    "ts-node": "^10.0.0",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^4.9.5",
+    "typescript-eslint": "^7.1.1",
+    "uuid": "^9.0.0"
+  }
+}
